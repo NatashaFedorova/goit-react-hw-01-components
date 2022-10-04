@@ -1,16 +1,11 @@
+import users from '../users.json';
+import { Box } from 'components/Box/Box.styled';
+import { ListProfiles } from 'components/ListProfiles/ListProfiles';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Box>
+      <ListProfiles users={users} />
+    </Box>
   );
 };
