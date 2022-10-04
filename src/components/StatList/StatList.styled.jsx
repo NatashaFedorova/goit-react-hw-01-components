@@ -6,6 +6,7 @@ export const List = styled.ul`
   list-style: none;
   display: flex;
   align-items: center;
+  border-radius: ${props => props.theme.radii.normal};
 `;
 
 export const Item = styled.li`
@@ -17,10 +18,17 @@ export const Item = styled.li`
   flex-direction: column;
   align-items: center;
   font-size: ${props => props.theme.fontSizes.small};
+  &:first-child {
+    border-bottom-left-radius: ${props => props.theme.radii.normal};
+  }
+  &:last-child {
+    border-bottom-right-radius: ${props => props.theme.radii.normal};
+  }
 
   background-color: ${props =>
     `#${Math.floor(Math.random() * 16777215).toString(16)}`};
 `;
+
 export const TypeDoc = styled.span`
   font-weight: ${props => props.theme.fontWeight.mediumPlus};
   margin-bottom: 8px;

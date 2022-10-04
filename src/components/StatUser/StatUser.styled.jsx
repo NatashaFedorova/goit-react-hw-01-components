@@ -20,6 +20,12 @@ export const Item = styled.li`
   &:not(:last-child) {
     border-right: ${props => `1px solid ${props.theme.colors.grey}`};
   }
+  &:first-child {
+    border-bottom-left-radius: ${props => props.theme.radii.normal};
+  }
+  &:last-child {
+    border-bottom-right-radius: ${props => props.theme.radii.normal};
+  }
 `;
 
 export const TypeStatData = styled.span`
