@@ -1,12 +1,12 @@
-import { Box, AvatarUser, UserName, AboutUser } from './Description.styled';
+import { Box, Img, Name, Info } from './Description.styled';
 
 export const Description = ({ username, tag, location, avatar }) => {
   return (
     <Box>
-      <AvatarUser src={avatar} alt="User avatar" />
-      <UserName>{username}</UserName>
-      <AboutUser>@{tag}</AboutUser>
-      <AboutUser>{location}</AboutUser>
+      <Img src={avatar} alt="User avatar" />
+      <Name>{username}</Name>
+      <Info>@{tag}</Info>
+      <Info>{location}</Info>
     </Box>
   );
 };

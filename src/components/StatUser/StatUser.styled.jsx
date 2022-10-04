@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StatList = styled.ul`
+export const List = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
@@ -9,7 +9,7 @@ export const StatList = styled.ul`
   border-top: ${props => `1px solid ${props.theme.colors.grey}`};
 `;
 
-export const StatItem = styled.li`
+export const Item = styled.li`
   padding: ${props => props.theme.spacing(5)} 0;
   width: calc(100% / 3);
   color: ${props => props.theme.colors.grey};
@@ -23,9 +23,11 @@ export const StatItem = styled.li`
 `;
 
 export const TypeStatData = styled.span`
-  font-weight: 700;
+  font-weight: ${props => props.theme.fontWeight.bolt};
+  font-size: ${props => props.theme.fontSizes.small};
 `;
 
-export const StatData = styled.span`
-  font-weight: 500;
+export const StatValue = styled.span`
+  font-weight: ${props => props.theme.fontWeight.medium};
+  font-size: ${props => props.theme.fontSizes.small};
 `;

@@ -1,11 +1,17 @@
-import users from '../users.json';
-import { Box } from 'components/Box/Box.styled';
-import { ListProfiles } from 'components/ListProfiles/ListProfiles';
+import user from '../database/users.json';
+import data from '../database/data.json';
+import friends from '../database/friends.json';
+
+import { Profile } from 'components/Profile/Profile';
+import { Statistics } from 'components/Statistics/Statistics';
+import { FriendList } from 'components/FriendList/FriendList';
 
 export const App = () => {
   return (
-    <Box>
-      <ListProfiles users={users} />
-    </Box>
+    <>
+      <Profile user={user} />
+      <Statistics data={data} />
+      <FriendList friends={friends} />
+    </>
   );
 };

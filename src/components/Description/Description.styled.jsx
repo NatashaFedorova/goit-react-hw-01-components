@@ -5,17 +5,19 @@ export const Box = styled.div`
   padding: ${props => props.theme.spacing(8)};
 `;
 
-export const AvatarUser = styled.img`
+export const Img = styled.img`
   width: 150px;
   border-radius: ${props => props.theme.radii.round};
 `;
 
-export const UserName = styled.h3`
+export const Name = styled.h3`
   color: ${props => props.theme.colors.grey};
+  font-size: ${props => props.theme.fontSizes.large};
 `;
 
-export const AboutUser = styled.p`
-  font-weight: 500;
+export const Info = styled.p`
+  font-size: ${props => props.theme.fontSizes.medium};
+  font-weight: ${props => props.theme.fontWeight.medium};
   color: ${props => props.theme.colors.grey};
 `;
-// 
+//

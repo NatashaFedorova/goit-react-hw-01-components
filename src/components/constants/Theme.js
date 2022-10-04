@@ -12,4 +12,15 @@ export const theme = Object.freeze({
     normal: '4px',
     round: '50%',
   },
+  fontSizes: {
+    small: '20px',
+    medium: '24px',
+    large: '36px',
+  },
+  fontWeight: {
+    normal: '400',
+    medium: '500',
+    mediumPlus: '600',
+    bolt: '700',
+  },
 });

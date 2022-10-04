@@ -1,39 +1,19 @@
 import PropTypes from 'prop-types';
 
-import { Description } from 'components/Description/Description';
-import { Statistic } from 'components/Statistic/Statistic';
+import { SectionProfile } from './Profile.styled';
+import { Container } from 'components/Container/Container.styled';
+import { CardUser } from 'components/CardUser/CardUser';
 
-export const Profile = ({ user, theme }) => {
-  const {
-    username,
-    tag,
-    location,
-    avatar,
-    stats: { followers, views, likes },
-  } = user;
-
+export const Profile = ({ user }) => {
   return (
-    <>
-      <Description
-        username={username}
-        tag={tag}
-        location={location}
-        avatar={avatar}
-      />
-      <Statistic followers={followers} views={views} likes={likes} />
-    </>
+    <SectionProfile>
+      <Container>
+        <CardUser user={user} />
+      </Container>
+    </SectionProfile>
   );
 };
 
 Profile.propType = {
-  username: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-
-  stats: PropTypes.exact({
-    followers: PropTypes.number.isRequired,
-    views: PropTypes.number.isRequired,
-    likes: PropTypes.number.isRequired,
-  }),
+  user: PropTypes.object.isRequired,
 };
