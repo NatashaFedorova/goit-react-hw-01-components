@@ -20,4 +20,3 @@ export const Info = styled.p`
   font-weight: ${props => props.theme.fontWeight.medium};
   color: ${props => props.theme.colors.grey};
 `;
-//

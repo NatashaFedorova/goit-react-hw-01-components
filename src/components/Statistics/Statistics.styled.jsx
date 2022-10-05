@@ -6,8 +6,7 @@ export const SectionStatistics = styled.section`
 `;
 
 export const BoxTable = styled.div`
-  border-top-left-radius: ${props => props.theme.radii.normal};
-  border-top-right-radius: ${props => props.theme.radii.normal};
+  border-radius: ${props => props.theme.radii.normal};
   box-shadow: 2px -1px 17px 0px rgba(71, 71, 71, 0.75);
 `;
 
