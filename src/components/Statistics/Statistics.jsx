@@ -2,10 +2,13 @@ import {
   SectionStatistics,
   Title,
   BoxTable,
+  List,
+  Item,
+  TypeDoc,
+  Res,
 } from 'components/Statistics/Statistics.styled';
 
 import { Container } from 'components/Container/Container.styled';
-import { StatList } from 'components/StatList/StatList';
 
 export const Statistics = ({ data }) => {
   return (
@@ -13,7 +16,14 @@ export const Statistics = ({ data }) => {
       <Container>
         <BoxTable>
           <Title>Upload stats</Title>
-          <StatList data={data} />
+          <List>
+            {data.map(({ id, label, percentage }) => (
+              <Item key={id} label={label} lengthList={data.length}>
+                <TypeDoc>{label}</TypeDoc>
+                <Res>{percentage}%</Res>
+              </Item>
+            ))}
+          </List>
         </BoxTable>
       </Container>
     </SectionStatistics>

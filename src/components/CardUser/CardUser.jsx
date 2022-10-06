@@ -1,8 +1,16 @@
 import PropTypes from 'prop-types';
 
-import { Card } from 'components/CardUser/CardUser.styled';
-import { Description } from 'components/Description/Description';
-import { StatUser } from 'components/StatUser/StatUser';
+import {
+  Card,
+  Box,
+  Img,
+  Name,
+  Info,
+  List,
+  Item,
+  TypeStatData,
+  StatValue,
+} from 'components/CardUser/CardUser.styled';
 
 export const CardUser = ({ user }) => {
   const {
@@ -15,30 +23,40 @@ export const CardUser = ({ user }) => {
 
   return (
     <Card>
-      <Description
-        username={username}
-        tag={tag}
-        location={location}
-        avatar={avatar}
-      />
-      <StatUser followers={followers} views={views} likes={likes} />
+      <Box>
+        <Img src={avatar} alt="User avatar" />
+        <Name>{username}</Name>
+        <Info>@{tag}</Info>
+        <Info>{location}</Info>
+      </Box>
+      <List>
+        <Item>
+          <TypeStatData>Followers</TypeStatData>
+          <StatValue>{followers}</StatValue>
+        </Item>
+        <Item>
+          <TypeStatData>Views</TypeStatData>
+          <StatValue>{views}</StatValue>
+        </Item>
+        <Item>
+          <TypeStatData>Likes</TypeStatData>
+          <StatValue>{likes}</StatValue>
+        </Item>
+      </List>
     </Card>
   );
 };
 
 CardUser.propType = {
-  user: PropTypes.object.isRequired,
-};
-
-Description.propType = {
-  username: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-};
-
-StatUser.propType = {
-  followers: PropTypes.number.isRequired,
-  views: PropTypes.number.isRequired,
-  likes: PropTypes.number.isRequired,
+  user: PropTypes.exact({
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    stats: PropTypes.exact({
+      followers: PropTypes.number.isRequired,
+      views: PropTypes.number.isRequired,
+      likes: PropTypes.number.isRequired,
+    }),
+  }),
 };
