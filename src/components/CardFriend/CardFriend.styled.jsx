@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Status = styled.span`
+export const Status = styled.div`
   width: 30px;
   height: 30px;
   border-radius: ${props => props.theme.radii.round};
